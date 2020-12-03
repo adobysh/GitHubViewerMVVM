@@ -7,23 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D4985282576815B00213417 /* RepositoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D4985272576815B00213417 /* RepositoryViewModel.swift */; };
 		9D9B75BB2570EF2B00246942 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B75BA2570EF2B00246942 /* AppDelegate.swift */; };
 		9D9B75BD2570EF2B00246942 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B75BC2570EF2B00246942 /* SceneDelegate.swift */; };
-		9D9B75BF2570EF2B00246942 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B75BE2570EF2B00246942 /* ViewController.swift */; };
-		9D9B75C22570EF2B00246942 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D9B75C02570EF2B00246942 /* Main.storyboard */; };
+		9D9B75BF2570EF2B00246942 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B75BE2570EF2B00246942 /* RepositoryViewController.swift */; };
+		9D9B75C22570EF2B00246942 /* RepositoryViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D9B75C02570EF2B00246942 /* RepositoryViewController.storyboard */; };
 		9D9B75C42570EF2D00246942 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D9B75C32570EF2D00246942 /* Assets.xcassets */; };
 		9D9B75C72570EF2D00246942 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D9B75C52570EF2D00246942 /* LaunchScreen.storyboard */; };
+		9D9B75D02570FF1600246942 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B75CF2570FF1600246942 /* RepositoryModel.swift */; };
+		9DBEE74725710E290075004E /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBEE74625710E290075004E /* RepositoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9D9B75B72570EF2B00246942 /* GitHubViewerMVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubViewerMVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9D4985272576815B00213417 /* RepositoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewModel.swift; sourceTree = "<group>"; };
+		9D9B75B72570EF2B00246942 /* GitHubViewerMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubViewerMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D9B75BA2570EF2B00246942 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D9B75BC2570EF2B00246942 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		9D9B75BE2570EF2B00246942 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9D9B75C12570EF2B00246942 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9D9B75BE2570EF2B00246942 /* RepositoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
+		9D9B75C12570EF2B00246942 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RepositoryViewController.storyboard; sourceTree = "<group>"; };
 		9D9B75C32570EF2D00246942 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9D9B75C62570EF2D00246942 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D9B75C82570EF2D00246942 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D9B75CF2570FF1600246942 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
+		9DBEE74625710E290075004E /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +46,7 @@
 		9D9B75AE2570EF2B00246942 = {
 			isa = PBXGroup;
 			children = (
-				9D9B75B92570EF2B00246942 /* GitHubViewerMVC */,
+				9D9B75B92570EF2B00246942 /* GitHubViewerMVVM */,
 				9D9B75B82570EF2B00246942 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,31 +54,50 @@
 		9D9B75B82570EF2B00246942 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9D9B75B72570EF2B00246942 /* GitHubViewerMVC.app */,
+				9D9B75B72570EF2B00246942 /* GitHubViewerMVVM.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9D9B75B92570EF2B00246942 /* GitHubViewerMVC */ = {
+		9D9B75B92570EF2B00246942 /* GitHubViewerMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				9DBEE74325710CEF0075004E /* Modules */,
 				9D9B75BA2570EF2B00246942 /* AppDelegate.swift */,
 				9D9B75BC2570EF2B00246942 /* SceneDelegate.swift */,
-				9D9B75BE2570EF2B00246942 /* ViewController.swift */,
-				9D9B75C02570EF2B00246942 /* Main.storyboard */,
 				9D9B75C32570EF2D00246942 /* Assets.xcassets */,
 				9D9B75C52570EF2D00246942 /* LaunchScreen.storyboard */,
 				9D9B75C82570EF2D00246942 /* Info.plist */,
 			);
-			path = GitHubViewerMVC;
+			path = GitHubViewerMVVM;
+			sourceTree = "<group>";
+		};
+		9DBEE74325710CEF0075004E /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				9DBEE74425710CF90075004E /* Repository */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		9DBEE74425710CF90075004E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				9D9B75BE2570EF2B00246942 /* RepositoryViewController.swift */,
+				9D9B75C02570EF2B00246942 /* RepositoryViewController.storyboard */,
+				9D4985272576815B00213417 /* RepositoryViewModel.swift */,
+				9D9B75CF2570FF1600246942 /* RepositoryModel.swift */,
+				9DBEE74625710E290075004E /* RepositoryCell.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9D9B75B62570EF2B00246942 /* GitHubViewerMVC */ = {
+		9D9B75B62570EF2B00246942 /* GitHubViewerMVVM */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9D9B75CB2570EF2D00246942 /* Build configuration list for PBXNativeTarget "GitHubViewerMVC" */;
+			buildConfigurationList = 9D9B75CB2570EF2D00246942 /* Build configuration list for PBXNativeTarget "GitHubViewerMVVM" */;
 			buildPhases = (
 				9D9B75B32570EF2B00246942 /* Sources */,
 				9D9B75B42570EF2B00246942 /* Frameworks */,
@@ -82,9 +107,9 @@
 			);
 			dependencies = (
 			);
-			name = GitHubViewerMVC;
+			name = GitHubViewerMVVM;
 			productName = GitHubViewerMVC;
-			productReference = 9D9B75B72570EF2B00246942 /* GitHubViewerMVC.app */;
+			productReference = 9D9B75B72570EF2B00246942 /* GitHubViewerMVVM.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -101,7 +126,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9D9B75B22570EF2B00246942 /* Build configuration list for PBXProject "GitHubViewerMVC" */;
+			buildConfigurationList = 9D9B75B22570EF2B00246942 /* Build configuration list for PBXProject "GitHubViewerMVVM" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -114,7 +139,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9D9B75B62570EF2B00246942 /* GitHubViewerMVC */,
+				9D9B75B62570EF2B00246942 /* GitHubViewerMVVM */,
 			);
 		};
 /* End PBXProject section */
@@ -126,7 +151,7 @@
 			files = (
 				9D9B75C72570EF2D00246942 /* LaunchScreen.storyboard in Resources */,
 				9D9B75C42570EF2D00246942 /* Assets.xcassets in Resources */,
-				9D9B75C22570EF2B00246942 /* Main.storyboard in Resources */,
+				9D9B75C22570EF2B00246942 /* RepositoryViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,21 +162,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D9B75BF2570EF2B00246942 /* ViewController.swift in Sources */,
+				9DBEE74725710E290075004E /* RepositoryCell.swift in Sources */,
+				9D9B75BF2570EF2B00246942 /* RepositoryViewController.swift in Sources */,
+				9D4985282576815B00213417 /* RepositoryViewModel.swift in Sources */,
 				9D9B75BB2570EF2B00246942 /* AppDelegate.swift in Sources */,
 				9D9B75BD2570EF2B00246942 /* SceneDelegate.swift in Sources */,
+				9D9B75D02570FF1600246942 /* RepositoryModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9D9B75C02570EF2B00246942 /* Main.storyboard */ = {
+		9D9B75C02570EF2B00246942 /* RepositoryViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				9D9B75C12570EF2B00246942 /* Base */,
 			);
-			name = Main.storyboard;
+			name = RepositoryViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		9D9B75C52570EF2D00246942 /* LaunchScreen.storyboard */ = {
@@ -288,12 +316,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VSSLZLSWKJ;
-				INFOPLIST_FILE = GitHubViewerMVC/Info.plist;
+				INFOPLIST_FILE = GitHubViewerMVVM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.itrex.test.GitHubViewerMVC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itrex.test.GitHubViewerMVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,12 +335,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VSSLZLSWKJ;
-				INFOPLIST_FILE = GitHubViewerMVC/Info.plist;
+				INFOPLIST_FILE = GitHubViewerMVVM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.itrex.test.GitHubViewerMVC;
+				PRODUCT_BUNDLE_IDENTIFIER = com.itrex.test.GitHubViewerMVVM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -322,7 +350,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9D9B75B22570EF2B00246942 /* Build configuration list for PBXProject "GitHubViewerMVC" */ = {
+		9D9B75B22570EF2B00246942 /* Build configuration list for PBXProject "GitHubViewerMVVM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9D9B75C92570EF2D00246942 /* Debug */,
@@ -331,7 +359,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9D9B75CB2570EF2D00246942 /* Build configuration list for PBXNativeTarget "GitHubViewerMVC" */ = {
+		9D9B75CB2570EF2D00246942 /* Build configuration list for PBXNativeTarget "GitHubViewerMVVM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9D9B75CC2570EF2D00246942 /* Debug */,

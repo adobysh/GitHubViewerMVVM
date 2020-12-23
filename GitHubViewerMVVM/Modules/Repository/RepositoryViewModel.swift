@@ -27,9 +27,12 @@ class RepositoryViewModel { // todo: combine or didSet or bond
         }
     }
     
-    func item(for index: Int) -> RepositoryCellModel {
-        let repositoryModel = repositories[index]
-        return RepositoryCellModel(titleMessage: repositoryModel.name ?? "", descriptionMessage: repositoryModel.createdAt ?? "")
+    func item(for index: Int) -> RepositoryCellModel? {
+        if let repositoryModel = repositories[safe: index] {
+            return RepositoryCellModel(titleMessage: repositoryModel.name ?? "", descriptionMessage: repositoryModel.createdAt ?? "")
+        } else {
+            return nil
+        }
     }
     
 }

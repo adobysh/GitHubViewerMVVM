@@ -44,8 +44,8 @@ extension RepositoryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RepositoryCell") as! RepositoryCell
         let item = viewModel.item(for: indexPath.row)
-        cell.titleLabel.text = item.name
-        cell.descriptionLabel.text = item.createdAt
+        cell.titleLabel.text = item.titleMessage
+        cell.descriptionLabel.text = item.descriptionMessage
         return cell
     }
     

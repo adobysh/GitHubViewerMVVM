@@ -15,6 +15,7 @@
 		9D9B75C42570EF2D00246942 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D9B75C32570EF2D00246942 /* Assets.xcassets */; };
 		9D9B75C72570EF2D00246942 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D9B75C52570EF2D00246942 /* LaunchScreen.storyboard */; };
 		9D9B75D02570FF1600246942 /* RepositoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D9B75CF2570FF1600246942 /* RepositoryModel.swift */; };
+		9DA57C472593F8A10022E166 /* RepositoryCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DA57C462593F8A10022E166 /* RepositoryCellModel.swift */; };
 		9DBEE74725710E290075004E /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DBEE74625710E290075004E /* RepositoryCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		9D9B75C62570EF2D00246942 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9D9B75C82570EF2D00246942 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D9B75CF2570FF1600246942 /* RepositoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryModel.swift; sourceTree = "<group>"; };
+		9DA57C462593F8A10022E166 /* RepositoryCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCellModel.swift; sourceTree = "<group>"; };
 		9DBEE74625710E290075004E /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 				9D4985272576815B00213417 /* RepositoryViewModel.swift */,
 				9D9B75CF2570FF1600246942 /* RepositoryModel.swift */,
 				9DBEE74625710E290075004E /* RepositoryCell.swift */,
+				9DA57C462593F8A10022E166 /* RepositoryCellModel.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				9D9B75BB2570EF2B00246942 /* AppDelegate.swift in Sources */,
 				9D9B75BD2570EF2B00246942 /* SceneDelegate.swift in Sources */,
 				9D9B75D02570FF1600246942 /* RepositoryModel.swift in Sources */,
+				9DA57C472593F8A10022E166 /* RepositoryCellModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,7 +248,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -299,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

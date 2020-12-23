@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RepositoryViewModel {
+class RepositoryViewModel { // todo: combine or didSet or bond
     
     public var count: Int {
         return repositories.count
@@ -27,8 +27,9 @@ class RepositoryViewModel {
         }
     }
     
-    func item(for index: Int) -> RepositoryModel {
-        return repositories[index]
+    func item(for index: Int) -> RepositoryCellModel {
+        let repositoryModel = repositories[index]
+        return RepositoryCellModel(titleMessage: repositoryModel.name ?? "", descriptionMessage: repositoryModel.createdAt ?? "")
     }
     
 }

@@ -6,29 +6,34 @@
 //
 
 import Foundation
+import Combine
 
-class RepositoryViewModel { // todo: combine or didSet or bond
+class RepositoryViewModel: ObservableObject { // todo: combine or didSet or bond
+    
+    // input
+    @Published var name: String = ""
+    // output
+    @Published var repos: [RepositoryModel] = []
     
     public var count: Int {
-        return repositories.count
+        return repos.count
     }
-    private var repositories: [RepositoryModel] = []
     
-    func show(user: String, completion: @escaping (Error?) -> Void) {
-        RepositoryModel.load(user: user) { [weak self] result in
-            switch result {
-            case .complete(let value):
-                self?.repositories = value
-                completion(nil)
-            case .error(let error):
-                self?.repositories = []
-                completion(error)
+    init() {
+        $name
+            .debounce(for: 0.3, scheduler: RunLoop.main)
+            .removeDuplicates()
+            .flatMap { (name: String) -> AnyPublisher<[RepositoryModel], Never> in
+                RepositoryModel.fetch(user: name)
             }
-        }
+            .assign(to: \.repos, on: self)
+            .store(in: &self.cancellableSet)
     }
+    
+    private var cancellableSet: Set<AnyCancellable> = []
     
     func item(for index: Int) -> RepositoryCellModel? {
-        if let repositoryModel = repositories[safe: index] {
+        if let repositoryModel = repos[safe: index] {
             return RepositoryCellModel(titleMessage: repositoryModel.name ?? "", descriptionMessage: repositoryModel.createdAt ?? "")
         } else {
             return nil

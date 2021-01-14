@@ -6,32 +6,43 @@
 //
 
 import UIKit
+import Combine
 
 class RepositoryViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var textField: UITextField! {
+        didSet {
+            textField.isEnabled = true
+            textField.becomeFirstResponder()
+        }
+    }
     private var viewModel = RepositoryViewModel()
     
     @IBAction func goAction(_ sender: Any) {
-        viewModel.show(user: textField.text ?? "", completion: { [weak self] error in
-            if let error = error {
-                self?.showError(error)
-            } else {
-                self?.update()
-            }
-        })
+        // unused
     }
     
-    func showError(_ error: Error) {
-        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        self.present(alert, animated: true)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        textField.text = viewModel.name
+        binding()
     }
     
-    func update() {
-        tableView.reloadData()
+    func binding() {
+        textField.textPublisher
+            .assign(to: \.name, on: viewModel)
+            .store(in: &cancellable)
+        
+        viewModel.$repos
+           .receive(on: DispatchQueue.main)
+           .sink { [weak self] items in
+              self?.tableView.reloadData()
+           }
+           .store(in: &cancellable)
     }
+    
+    private var cancellable = Set<AnyCancellable>()
 
 }
 

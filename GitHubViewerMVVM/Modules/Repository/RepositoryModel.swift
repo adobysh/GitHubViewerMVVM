@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 enum Completion<T> {
     case complete(value: T)
@@ -30,29 +31,25 @@ struct RepositoryModel: Codable {
     let name: String?
     let createdAt: String?
     
-    static func load(user: String, completion: @escaping (Completion<[RepositoryModel]>) -> Void) {
-        DispatchQueue.global().async {
-            guard let url = URL(string: "https://api.github.com/users/" + user + "/repos") else {
-                DispatchQueue.main.async {
-                    completion(.error(RepositoryModelError.url))
-                }
-                return
-            }
-            
-            do {
-                let jsonData = try Data(contentsOf: url)
-                let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                let repositories = try decoder.decode([RepositoryModel].self, from: jsonData)
-                print(repositories)
-                DispatchQueue.main.async {
-                    completion(.complete(value: repositories))
-                }
-            } catch {
-                DispatchQueue.main.async {
-                    completion(.error(error))
-                }
-            }
+    static var placeholder: Self {
+        return RepositoryModel(name: nil, createdAt: nil)
+    }
+    
+    static func fetch(user: String) -> AnyPublisher<[RepositoryModel], Never> {
+        guard let url = absoluteURL(user: user) else {
+            return Just([RepositoryModel.placeholder])
+                .eraseToAnyPublisher()
         }
+        return
+            URLSession.shared.dataTaskPublisher(for: url)
+            .map { $0.data }
+            .decode(type: [RepositoryModel].self, decoder: JSONDecoder())
+            .catch { error in Just([RepositoryModel.placeholder]) }
+            .receive(on: RunLoop.main)
+            .eraseToAnyPublisher()
+    }
+    
+    static func absoluteURL(user: String) -> URL? {
+        return URL(string: "https://api.github.com/users/" + user + "/repos")
     }
 }
